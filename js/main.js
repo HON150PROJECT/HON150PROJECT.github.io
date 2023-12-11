@@ -36,7 +36,7 @@ function cycle() {
     document.querySelector("#opt2").innerHTML = opt2text;
     
     if (health == 5) {
-        window.location.href = 'https://HON150PROJECT.github.com/lost.html';
+        window.location.href = 'https://HON150PROJECT.github.io/lost';
         document.querySelector("#error").innerHTML = "this code ran";
     } else {
         document.querySelector("error").innerHTML = "didnt run";
