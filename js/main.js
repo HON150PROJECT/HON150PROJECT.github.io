@@ -91,3 +91,9 @@ function checkList(choice) {
     //count += 1
 
 }
+
+function guide() {
+
+    window.location.href = 'https://HON150PROJECT.github.io/guide';
+
+}
