@@ -3,11 +3,11 @@ let opt1text = "";
 let opt2text = "";
 let choice = true;
 
-var health = 0;
-var economy = 0;
-var growth = 0;
-var security = 0;
-var environment = 0;
+var health = 20;
+var economy = 20;
+var growth = 20;
+var security = 20;
+var environment = 20;
 
 cycle();
 
@@ -35,7 +35,7 @@ function cycle() {
     document.querySelector("#opt1").innerHTML = opt1text;
     document.querySelector("#opt2").innerHTML = opt2text;
     
-    if (health == 5) {
+    if (health >= 100 || health <= 0) {
         window.location.href = 'https://HON150PROJECT.github.io/lost';
         document.querySelector("#error").innerHTML = "this code ran";
     } else {
