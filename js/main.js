@@ -11,14 +11,7 @@ var environment = 0;
 
 cycle();
 
-function cycle() {
-
-    if (health == 5) {
-        window.location.href = 'https://HON150PROJECT/lost.html';
-        document.querySelector("#error").innerHTML = "this code ran";
-    } else {
-        document.querySelector("error").innerHTML = "didnt run"
-    }
+function cycle() {    
 
     switch (count) {
 
@@ -26,19 +19,28 @@ function cycle() {
             opt1text = "Fire";
             opt2text = "Stone Tools";
             break;
+            
         case 1:
             opt1text = "Agriculture";
             opt2text = "Pottery";
             break;
+    
         default:
             opt1text = "error";
             opt2text = "error";
             break;
     
     }
-    
+
     document.querySelector("#opt1").innerHTML = opt1text;
     document.querySelector("#opt2").innerHTML = opt2text;
+    
+    if (health == 5) {
+        window.location.href = 'https://HON150PROJECT.github.com/lost.html';
+        document.querySelector("#error").innerHTML = "this code ran";
+    } else {
+        document.querySelector("error").innerHTML = "didnt run";
+    }
 
 }
 
@@ -56,7 +58,7 @@ function opt2() {
 
     choice = false;
     checkList(choice);
-    document.querySelector('#error').innerHTML = choice;
+    //document.querySelector('#error').innerHTML = choice;
     cycle();
     //document.querySelector("#check").innerHTML = "opt 2, count:" + (count - 1);
 
