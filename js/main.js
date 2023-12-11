@@ -9,13 +9,26 @@ var growth = 0;
 var security = 0;
 var environment = 0;
 
+cycle();
+
 function cycle() {
+
+    if (health == 5) {
+        window.location.href = 'https://HON150PROJECT/lost.html';
+        document.querySelector("#error").innerHTML = "this code ran";
+    } else {
+        document.querySelector("error").innerHTML = "didnt run"
+    }
 
     switch (count) {
 
         case 0:
-            opt1text = "Choice Option 1";
-            opt2text = "Choice Option 2";
+            opt1text = "Fire";
+            opt2text = "Stone Tools";
+            break;
+        case 1:
+            opt1text = "Agriculture";
+            opt2text = "Pottery";
             break;
         default:
             opt1text = "error";
@@ -24,17 +37,17 @@ function cycle() {
     
     }
     
-    document.querySelector("#opt1").innerHTML = "#" + "opt1text";
-    document.querySelector("#opt2").innerHTML = "#" + "opt2text";
+    document.querySelector("#opt1").innerHTML = opt1text;
+    document.querySelector("#opt2").innerHTML = opt2text;
 
-    count += 1
 }
 
 function opt1() {
 
     choice = true;
-    checkList();
-    document.querySelector("#check").innerHTML = "opt 1";
+    checkList(choice);
+    cycle();
+    //document.querySelector("#check").innerHTML = "opt 1, count" + (count - 1);
 
 
 }
@@ -42,20 +55,22 @@ function opt1() {
 function opt2() {
 
     choice = false;
-    checkList();
-    document.querySelector("#check").innerHTML = "opt 2";
+    checkList(choice);
+    document.querySelector('#error').innerHTML = choice;
+    cycle();
+    //document.querySelector("#check").innerHTML = "opt 2, count:" + (count - 1);
 
 }
 
-function checkList() {
+function checkList(choice) {
 
     switch (count) {
 
         case 0:
-            if (choice = true) {
+            if (choice == true) {
                 health += 1;
-            } else if (choice = false) {
-                health -= 1;
+            } else if (choice == false) {
+                health = health - 1;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -64,5 +79,13 @@ function checkList() {
             break;
 
     }
+
+    document.querySelector("#health").innerHTML = "Health: " + health;
+    document.querySelector("#economy").innerHTML = "Economy: " + economy;
+    document.querySelector("#growth").innerHTML = "Growth: " + growth;
+    document.querySelector("#security").innerHTML = "Security: " + security;
+    document.querySelector("#environment").innerHTML = "Environment: " + environment;
+
+    //count += 1
 
 }
