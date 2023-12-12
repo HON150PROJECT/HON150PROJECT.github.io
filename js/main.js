@@ -52,24 +52,24 @@ function cycle() {
             opt2text = "Urban Planning";
             break;
         case 8:
-            opt1text = "";
-            opt2text = "";
+            opt1text = "Iron Smelting";
+            opt2text = "Watermills";
             break;
         case 9:
-            opt1text = "";
-            opt2text = "";
+            opt1text = "Crossbow";
+            opt2text = "Horse Collar";
             break;
         case 10:
-            opt1text = "";
-            opt2text = "";
+            opt1text = "Astrolabe";
+            opt2text = "Coinage";
             break;
         case 11:
-            opt1text = "";
-            opt2text = "";
+            opt1text = "Universities";
+            opt2text = "Castles";
             break;
         case 12:
-            opt1text = "";
-            opt2text = "";
+            opt1text = "Blast Furnace";
+            opt2text = "Firearms";
             break;
         case 7000000:
             opt1text = "";
@@ -204,45 +204,47 @@ function checkList(choice) {
             break;
         case 8:
             if (choice == true) {
-                
+                economy += 10;
+                security += 10;
             } else if (choice == false) {
-
+                economy += 10;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
         case 9:
             if (choice == true) {
-                
+                security += 5;
             } else if (choice == false) {
-
+                economy += 5;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
         case 10:
             if (choice == true) {
-                
+                economy += 5;
             } else if (choice == false) {
-
+                economy += 10;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
         case 11:
             if (choice == true) {
-                
+                economy += 5;
+                health += 5;
             } else if (choice == false) {
-
+                security += 10;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
         case 12:
             if (choice == true) {
-                
+                economy += 5;
             } else if (choice == false) {
-
+                security += 5;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
