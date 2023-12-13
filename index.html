@@ -11,6 +11,10 @@
 
   <img id = "mainImage" src = "res/tribal.jpg" width = "250" height = "250"></img>
 
+  <h1 id = "lost"></h1>
+
+  <br>
+
   <p id = "health">*</p>
   <p id = "economy">*</p>
   <p id = "growth">*</p>
@@ -23,15 +27,19 @@
     Which technology would you like to discover?
     <br>
     Your options:
-    <br>
-    1: <p id = "opt1"></p>
-    <br>
-    2: <p id = "opt2"></p>
+    <p>1:</p> <p id = "opt1"></p>
+    <p>2:</p> <p id = "opt2"></p>
+    <p id = "sec3" hidden>3:</p> <p id = "opt3"></p>
+    <p id = "sec4" hidden>4:</p> <p id = "opt4"></p>
+    <p id = "sec5" hidden>5:</p> <p id = "opt5"></p>
     <br>
   </p>
   
-  <button type = "button" onclick = "opt1()">Option 1</button>
-  <button type = "button" onclick = "opt2()">Option 2</button>
+  <button type = "button" id = "button1" onclick = "opt1()">Option 1</button>
+  <button type = "button" id = "button2" onclick = "opt2()">Option 2</button>
+  <button type = "button" id = "button3" onclick = "opt3()" hidden>Option 3</button>
+  <button type = "button" id = "button4" onclick = "opt4()" hidden>Option 4</button>
+  <button type = "button" id = "button5" onclick = "opt5()" hidden>Option 5</button>
 
 
 
@@ -40,6 +48,7 @@
   <p id = "error"></p>
 
   <button type = "button" onclick = "guide()">HOW TO PLAY</button>
+  <button type = "button" onclick = "reload()">RESTART</button>
 </body>
 
 <script src = "js/main.js"></script>

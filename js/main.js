@@ -1,6 +1,9 @@
 var count = 0;
 let opt1text = "";
 let opt2text = "";
+let opt3text = "";
+let opt4text = "";
+let opt5text = "";
 let choice = true;
 
 var health = 20;
@@ -8,6 +11,9 @@ var economy = 20;
 var growth = 20;
 var security = 20;
 var environment = 80;
+
+let lostCause = "";
+let era = "";
 
 cycle();
 
@@ -71,9 +77,66 @@ function cycle() {
             opt1text = "Blast Furnace";
             opt2text = "Firearms";
             break;
-        case 7000000:
-            opt1text = "";
-            opt2text = "";
+        case 13:
+            opt1text = "Steam Engine";
+            opt2text = "Cotton Gin";
+            break;
+        case 14:
+            opt1text = "Bessemer Process";
+            opt2text = "Railroads";
+            break;
+        case 15:
+            opt1text = "Refridgeration";
+            opt2text = "Electricity";
+            break;
+        case 16:
+            opt1text = "Assembly Line";
+            opt2text = "Automobile";
+            break;
+        case 17:
+            opt1text = "Plastic";
+            opt2text = "Airplanes";
+            break;
+        case 18:
+            opt1text = "Penicillin";
+            opt2text = "Nylon";
+            break;
+        case 19:
+            opt1text = "Polyethylene";
+            opt2text = "Commercial Aviation";
+            break;
+        case 20:
+            opt1text = "Nuclear Fission";
+            opt2text = "Computers";
+            break;
+        case 21:
+            opt1text = "Space Exploration";
+            opt2text = "Machine Learning";
+            break;
+        case 22:
+            opt1text = "Internet";
+            opt2text = "Microprocessors";
+            break;
+        case 23:
+            opt1text = "Smartphone";
+            opt2text = "Wikipedia";
+            break;
+        case 24:
+            opt1text = "Cryptocurrencies";
+            opt2text = "CRISPR";
+            break;
+        case 25:
+            opt1text = "AGI: Artificial Genderal Intelligence";
+            opt2text = "Nuclear Fusion";
+            opt3text = "Genetic Engineering";
+            opt4text = "Nanotechnology";
+            opt5text = "Brain Implants";
+            document.getElementById("sec3").removeAttribute("hidden");
+            document.getElementById("sec4").removeAttribute("hidden");
+            document.getElementById("sec5").removeAttribute("hidden");
+            document.getElementById("button3").removeAttribute("hidden");
+            document.getElementById("button4").removeAttribute("hidden");
+            document.getElementById("button5").removeAttribute("hidden");
             break;
         default:
             opt1text = "error";
@@ -84,22 +147,26 @@ function cycle() {
 
     document.querySelector("#opt1").innerHTML = opt1text;
     document.querySelector("#opt2").innerHTML = opt2text;
-    
+    document.querySelector("#opt3").innerHTML = opt3text;
+    document.querySelector("#opt4").innerHTML = opt4text;
+    document.querySelector("#opt5").innerHTML = opt5text;
+    //window.location.href = 'https://HON150PROJECT.github.io/lost';
+
     if (health >= 100 || health <= 0) {
-        window.location.href = 'https://HON150PROJECT.github.io/lost';
-        document.querySelector("#error").innerHTML = "this code ran";
+        lostCause = "health";
+        lost(era, lostCause);
     } else if (economy >= 100 || economy <= 0) {
-        window.location.href = 'https://HON150PROJECT.github.io/lost';
-        document.querySelector("#error").innerHTML = "this code ran";
+        lostCause = "economy";
+        lost(era, lostCause);
     } else if (growth >= 100 || growth <= 0) {
-        window.location.href = 'https://HON150PROJECT.github.io/lost';
-        document.querySelector("#error").innerHTML = "this code ran";
+        lostCause = "growth";
+        lost(era, lostCause);
     } else if (security >= 100 || security <= 0) {
-        window.location.href = 'https://HON150PROJECT.github.io/lost';
-        document.querySelector("#error").innerHTML = "this code ran";
+        lostCause = "security";
+        lost(era, lostCause);
     } else if (environment >= 100 || environment <= 0) {
-        window.location.href = 'https://HON150PROJECT.github.io/lost';
-        document.querySelector("#error").innerHTML = "this code ran";
+        lostCause = "environment";
+        lost(era, lostCause);
     } else {
         document.querySelector("error").innerHTML = "didnt run";
     }
@@ -249,7 +316,126 @@ function checkList(choice) {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
-        case 70000000:
+        case 13:
+            if (choice == true) {
+                economy += 5;
+                environment += -5;
+            } else if (choice == false) {
+                economy += 5;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 14:
+            if (choice == true) {
+                economy += 5;
+            } else if (choice == false) {
+                economy += 10;
+                environment += -5;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 15:
+            if (choice == true) {
+                health += 5;
+            } else if (choice == false) {
+                economy += 10;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 16:
+            if (choice == true) {
+                economy += 10;
+            } else if (choice == false) {
+                economy += 5;
+                environment += -10;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 17:
+            if (choice == true) {
+                economy += 10;
+                environment += -10;
+            } else if (choice == false) {
+                economy += 5;
+                environment += -5;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 18:
+            if (choice == true) {
+                health += 10;
+            } else if (choice == false) {
+                economy += 5;
+                environment += -5;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 19:
+            if (choice == true) {
+                economy += 5;
+                environment += -15;
+            } else if (choice == false) {
+                economy += 5;
+                environment += -10;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 20:
+            if (choice == true) {
+                environment += 10;
+                security += -10;
+            } else if (choice == false) {
+                economy += 5;
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 21:
+            if (choice == true) {
+                security += -5;
+                environment += -5;
+                economy += -10;
+            } else if (choice == false) {
+
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 22:
+            if (choice == true) {
+                
+            } else if (choice == false) {
+
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 23:
+            if (choice == true) {
+                
+            } else if (choice == false) {
+
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 24:
+            if (choice == true) {
+                
+            } else if (choice == false) {
+
+            } else {
+                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            }
+            break;
+        case 25:
             if (choice == true) {
                 
             } else if (choice == false) {
@@ -279,6 +465,7 @@ function Era(count) {
 
     if (count <= 1) {
         document.querySelector("#header").innerHTML = "TRIBAL ERA";
+        era = "tribal";
         
         document.querySelector("#growth").innerHTML = "Growth: " + growth;
     } else if (count > 1 && count <= 3) {
@@ -288,6 +475,7 @@ function Era(count) {
         document.querySelector("#security").innerHTML = "Security: " + security;
     } else if (count > 3 && count <= 4) {
         document.querySelector("#header").innerHTML = "BRONZE ERA";
+        era = "bronze";
 
         document.querySelector("#growth").innerHTML = "Growth: " + growth;
         document.querySelector("#security").innerHTML = "Security: " + security;
@@ -302,14 +490,100 @@ function Era(count) {
     } else if (count > 7 && count <= 12) {
         document.querySelector("#header").innerHTML = "IRON ERA";
         document.getElementById("mainImage").src = "res/medevil.jpg";
+        era = "iron";
 
         document.querySelector("#growth").innerHTML = "Growth: " + growth;
         document.querySelector("#security").innerHTML = "Security: " + security;
         document.querySelector("#economy").innerHTML = "Economy: " + economy;
         document.querySelector("#health").innerHTML = "Health: " + health;
+    } else if (count > 12 && count <= 17) {
+        document.querySelector("#header").innerHTML = "INDUSTRIAL ERA";
+        document.getElementById("mainImage").src = "res/industrial.jpg";
+        era = "industrial"
+
+        document.querySelector("#growth").innerHTML = "Growth: " + growth;
+        document.querySelector("#security").innerHTML = "Security: " + security;
+        document.querySelector("#economy").innerHTML = "Economy: " + economy;
+        document.querySelector("#health").innerHTML = "Health: " + health;
+        document.querySelector("#environment").innerHTML = "Environment: " + environment;
     }
 
 
-    //document.querySelector("#environment").innerHTML = "Environment: " + environment;
+}
+
+function lost(era, cause) {
+
+    if (era == "tribal") {
+        document.getElementById("mainImage").src = "res/tribal_fire.jpg";
+
+        if (cause == "growth") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: STARVATION";
+        } else if (cause == "security") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: TRIBAL WARFARE";
+        } 
+
+    } else if (era == "bronze") {
+        document.getElementById("mainImage").src = "res/tribal_fire.jpg";
+
+        if (cause == "growth") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: STARVATION";
+        } else if (cause == "security") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: TRIBAL WARFARE";
+        } else if (cause == "health") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: EPIDEMIC";
+        } else if (cause == "economy") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: ECONOMIC COLLAPSE";
+        }
+
+    } else if (era == "iron") {
+        document.getElementById("mainImage").src = "res/tribal_fire.jpg";
+
+        if (cause == "growth") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: STARVATION";
+        } else if (cause == "security") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: WARFARE";
+        } else if (cause == "health") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: EPIDEMIC";
+        } else if (cause == "economy") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: ECONOMIC COLLAPSE";
+        }
+
+    } else if (era == "industrial") {
+        document.getElementById("mainImage").src = "res/modern_fire.jpg";
+
+        if (cause == "growth") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: STARVATION";
+        } else if (cause == "security") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: WARFARE";
+        } else if (cause == "health") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: EPIDEMIC";
+        } else if (cause == "economy") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: DYSTOPIAN ECONOMIC SYSTEM";
+        } else if (cause = "environment") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: ENVIRONMENTAL COLLAPSE";
+        }
+
+    } else if (era == "digital") {
+        document.getElementById("mainImage").src = "res/modern_fire.jpg";
+
+        if (cause == "growth") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: STARVATION";
+        } else if (cause == "security") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: WARFARE";
+        } else if (cause == "health") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: EPIDEMIC";
+        } else if (cause == "economy") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: DYSTOPIAN ECONOMIC SYSTEM";
+        } else if (cause = "environment") {
+            document.querySelector("#lost").innerHTML = "YOU LOST: ENVIRONMENTAL COLLAPSE";
+        }
+
+    } 
+
+}
+
+function reload() {
+
+    window.location.href = 'https://HON150PROJECT.github.io'
 
 }
