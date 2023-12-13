@@ -648,6 +648,5 @@ function lost(era, cause) {
 
 function reload() {
 
-    window.location.href = 'https://HON150PROJECT.github.io'
-
+    location.reload();
 }
