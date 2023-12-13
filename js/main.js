@@ -577,7 +577,7 @@ function Era(count) {
         document.querySelector("#economy").innerHTML = "Economy: " + economy;
         document.querySelector("#health").innerHTML = "Health: " + health;
         document.querySelector("#environment").innerHTML = "Environment: " + environment;
-    } else if (count > 17) {
+    } else if (count > 17 && count <= 23) {
         document.querySelector("#header").innerHTML = "DIGITAL ERA";
         document.getElementById("mainImage").src = "res/modern.jpg";
         era = "digital"
