@@ -343,7 +343,7 @@ function checkList(choice) {
         case 13:
             if (choice == true) {
                 economy += 5;
-                environment += -5;
+                environment += (-5);
             } else if (choice == false) {
                 economy += 5;
             } else {
@@ -355,7 +355,7 @@ function checkList(choice) {
                 economy += 5;
             } else if (choice == false) {
                 economy += 10;
-                environment += -5;
+                environment += (-5);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -374,7 +374,7 @@ function checkList(choice) {
                 economy += 10;
             } else if (choice == false) {
                 economy += 5;
-                environment += -10;
+                environment += (-10);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -382,10 +382,10 @@ function checkList(choice) {
         case 17:
             if (choice == true) {
                 economy += 10;
-                environment += -10;
+                environment += (-10);
             } else if (choice == false) {
                 economy += 5;
-                environment += -5;
+                environment += (-5);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -395,7 +395,7 @@ function checkList(choice) {
                 health += 10;
             } else if (choice == false) {
                 economy += 5;
-                environment += -5;
+                environment += (-5);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -403,10 +403,10 @@ function checkList(choice) {
         case 19:
             if (choice == true) {
                 economy += 5;
-                environment += -15;
+                environment += (-15);
             } else if (choice == false) {
                 economy += 5;
-                environment += -10;
+                environment += (-10);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -414,7 +414,7 @@ function checkList(choice) {
         case 20:
             if (choice == true) {
                 environment += 10;
-                security += -10;
+                security += (-10);
             } else if (choice == false) {
                 economy += 5;
             } else {
@@ -423,8 +423,8 @@ function checkList(choice) {
             break;
         case 21:
             if (choice == true) {
-                security += -5;
-                environment += -5;
+                security += (-5);
+                environment += (-5);
                 economy += -10;
             } else if (choice == false) {
 
@@ -436,14 +436,16 @@ function checkList(choice) {
             if (choice == true) {
                 
             } else if (choice == false) {
-
+                economy += 5;
+                environment += (-5);
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
             break;
         case 23:
             if (choice == true) {
-                
+                economy += 5;
+                environment += (-5);
             } else if (choice == false) {
 
             } else {
@@ -452,9 +454,9 @@ function checkList(choice) {
             break;
         case 24:
             if (choice == true) {
-                
+                economy += (-20);
             } else if (choice == false) {
-
+                health += 10;
             } else {
                 document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
             }
@@ -575,8 +577,17 @@ function Era(count) {
         document.querySelector("#economy").innerHTML = "Economy: " + economy;
         document.querySelector("#health").innerHTML = "Health: " + health;
         document.querySelector("#environment").innerHTML = "Environment: " + environment;
-    }
+    } else if (count > 17) {
+        document.querySelector("#header").innerHTML = "DIGITAL ERA";
+        document.getElementById("mainImage").src = "res/modern.jpg";
+        era = "digital"
 
+        document.querySelector("#growth").innerHTML = "Growth: " + growth;
+        document.querySelector("#security").innerHTML = "Security: " + security;
+        document.querySelector("#economy").innerHTML = "Economy: " + economy;
+        document.querySelector("#health").innerHTML = "Health: " + health;
+        document.querySelector("#environment").innerHTML = "Environment: " + environment;
+    }
 
 }
 
