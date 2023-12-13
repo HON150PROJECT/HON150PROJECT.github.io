@@ -469,6 +469,7 @@ function checkList(choice) {
                 document.getElementById("lost").innerHTML = "The AGI deems that humans are preventing technology from progressing as fast as it could be without them and decides to exterminate them.";
                 
                 document.getElementById("main").setAttribute("hidden", "hidden");
+                document.getElementById("jump").setAttribute("hidden", "hidden");
 
             } else if (final == "2") {
                 //Nuclear Fusion: Developments in thermonuclear weapons lead to the mutually assured destruction of humans.
@@ -478,33 +479,37 @@ function checkList(choice) {
                 document.getElementById("lost").innerHTML = "Developments in thermonuclear weapons lead to the mutually assured destruction of humans.";
                 
                 document.getElementById("main").setAttribute("hidden", "hidden");
+                document.getElementById("jump").setAttribute("hidden", "hidden");
 
             } else if (final == "3") {
                 //Genetic Engineering: The engineering of DNA leads to humans and many other organisms becoming mere engineered products.
 
                 document.getElementById("header").innerHTML = "GENETIC MODIFICATION ENDING";
-                document.getElementById("mainImage").src = "res/";
+                document.getElementById("mainImage").src = "res/gene_ending.png";
                 document.getElementById("lost").innerHTML = "The engineering of DNA leads to humans and many other organisms becoming mere engineered products.";
                 
                 document.getElementById("main").setAttribute("hidden", "hidden");
+                document.getElementById("jump").setAttribute("hidden", "hidden");
 
             } else if (final == "4") {
                 //Nanotechnology: Humans lose control of self-replicating nanobots developed from nanotechnology, which become a deadly unstoppable artificial pathogen.
                 
                 document.getElementById("header").innerHTML = "NANOTECHNOLOGY ENDING";
-                document.getElementById("mainImage").src = "res/";
+                document.getElementById("mainImage").src = "res/nano_ending.png";
                 document.getElementById("lost").innerHTML = "Humans lose control of self-replicating nanobots developed from nanotechnology, which become a deadly unstoppable artificial pathogen.";
                 
                 document.getElementById("main").setAttribute("hidden", "hidden");
+                document.getElementById("jump").setAttribute("hidden", "hidden");
 
             } else if (final == "5") {
                 //Brain Implants: Brain implants eventually become required and lead to a mass panopticon effect, where every single aspect of one’s life is surveilled, including thought patterns.
 
                 document.getElementById("header").innerHTML = "NEURAL IMPLANTS ENDING";
-                document.getElementById("mainImage").src = "res/";
-                document.getElementById("lost").innerHTML = "Brain implants eventually become required and lead to a mass panopticon effect, where every single aspect of one’s life is surveilled, including thought patterns.";
+                document.getElementById("mainImage").src = "res/brain_ending.png";
+                document.getElementById("lost").innerHTML = "Brain implants eventually become required and lead to a mass panopticon effect, where every single aspect of one's life is surveilled, including thought patterns.";
                 
                 document.getElementById("main").setAttribute("hidden", "hidden");
+                document.getElementById("jump").setAttribute("hidden", "hidden");
 
             }
             break;
@@ -649,4 +654,12 @@ function lost(era, cause) {
 function reload() {
 
     location.reload();
+
+}
+
+function jump() {
+
+    count = 25;
+    cycle();
+
 }
