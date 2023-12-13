@@ -520,9 +520,11 @@ function checkList(choice) {
 
     }
 
+    if (count < 25) {
+        Era(count);
+        count += 1;
+    }
     
-    Era(count);
-    count += 1;
 
 }
 
@@ -577,7 +579,7 @@ function Era(count) {
         document.querySelector("#economy").innerHTML = "Economy: " + economy;
         document.querySelector("#health").innerHTML = "Health: " + health;
         document.querySelector("#environment").innerHTML = "Environment: " + environment;
-    } else if (count = 17) {
+    } else if (count > 17 <= 24) {
         document.querySelector("#header").innerHTML = "DIGITAL ERA";
         document.getElementById("mainImage").src = "res/modern.jpg";
         era = "digital"
@@ -588,12 +590,15 @@ function Era(count) {
         document.querySelector("#health").innerHTML = "Health: " + health;
         document.querySelector("#environment").innerHTML = "Environment: " + environment;
     } else {
-        
+
     }
 
 }
 
 function lost(era, cause) {
+
+    document.getElementById("main").setAttribute("hidden", "hidden");
+    document.getElementById("jump").setAttribute("hidden", "hidden");
 
     if (era == "tribal") {
         document.getElementById("mainImage").src = "res/tribal_fire.jpg";
