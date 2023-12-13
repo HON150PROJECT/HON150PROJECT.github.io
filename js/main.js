@@ -5,6 +5,7 @@ let opt3text = "";
 let opt4text = "";
 let opt5text = "";
 let choice = true;
+let final = "";
 
 var health = 20;
 var economy = 20;
@@ -176,6 +177,7 @@ function cycle() {
 function opt1() {
 
     choice = true;
+    final = "1";
     checkList(choice);
     cycle();
     //document.querySelector("#check").innerHTML = "opt 1, count" + (count - 1);
@@ -186,10 +188,32 @@ function opt1() {
 function opt2() {
 
     choice = false;
+    final = "2";
     checkList(choice);
     //document.querySelector('#error').innerHTML = choice;
     cycle();
     //document.querySelector("#check").innerHTML = "opt 2, count:" + (count - 1);
+
+}
+
+function opt3() {
+
+    final = "3";
+    checkList(choice);
+
+}
+
+function opt4() {
+
+    final = "4";
+    checkList(choice);
+
+}
+
+function opt5() {
+
+    final = "5";
+    checkList(choice);
 
 }
 
@@ -436,12 +460,52 @@ function checkList(choice) {
             }
             break;
         case 25:
-            if (choice == true) {
-                
-            } else if (choice == false) {
 
-            } else {
-                document.querySelector("#error").innerhtml = "ERROR: 0, CHOICE ERROR"
+            if (final == "1") {
+                //AGI: The AGI deems that humans are preventing technology from progressing as fast as it could be without them and decides to exterminate them.
+                
+                document.getElementById("header").innerHTML = "AGI ENDING";
+                document.getElementById("mainImage").src = "res/ai_ending.png";
+                document.getElementById("lost").innerHTML = "The AGI deems that humans are preventing technology from progressing as fast as it could be without them and decides to exterminate them.";
+                
+                document.getElementById("main").setAttribute("hidden", "hidden");
+
+            } else if (final == "2") {
+                //Nuclear Fusion: Developments in thermonuclear weapons lead to the mutually assured destruction of humans.
+                
+                document.getElementById("header").innerHTML = "NUCLEAR ENDING";
+                document.getElementById("mainImage").src = "res/nuke_ending.png";
+                document.getElementById("lost").innerHTML = "Developments in thermonuclear weapons lead to the mutually assured destruction of humans.";
+                
+                document.getElementById("main").setAttribute("hidden", "hidden");
+
+            } else if (final == "3") {
+                //Genetic Engineering: The engineering of DNA leads to humans and many other organisms becoming mere engineered products.
+
+                document.getElementById("header").innerHTML = "GENETIC MODIFICATION ENDING";
+                document.getElementById("mainImage").src = "res/";
+                document.getElementById("lost").innerHTML = "The engineering of DNA leads to humans and many other organisms becoming mere engineered products.";
+                
+                document.getElementById("main").setAttribute("hidden", "hidden");
+
+            } else if (final == "4") {
+                //Nanotechnology: Humans lose control of self-replicating nanobots developed from nanotechnology, which become a deadly unstoppable artificial pathogen.
+                
+                document.getElementById("header").innerHTML = "NANOTECHNOLOGY ENDING";
+                document.getElementById("mainImage").src = "res/";
+                document.getElementById("lost").innerHTML = "Humans lose control of self-replicating nanobots developed from nanotechnology, which become a deadly unstoppable artificial pathogen.";
+                
+                document.getElementById("main").setAttribute("hidden", "hidden");
+
+            } else if (final == "5") {
+                //Brain Implants: Brain implants eventually become required and lead to a mass panopticon effect, where every single aspect of one’s life is surveilled, including thought patterns.
+
+                document.getElementById("header").innerHTML = "NEURAL IMPLANTS ENDING";
+                document.getElementById("mainImage").src = "res/";
+                document.getElementById("lost").innerHTML = "Brain implants eventually become required and lead to a mass panopticon effect, where every single aspect of one’s life is surveilled, including thought patterns.";
+                
+                document.getElementById("main").setAttribute("hidden", "hidden");
+
             }
             break;
         default:
