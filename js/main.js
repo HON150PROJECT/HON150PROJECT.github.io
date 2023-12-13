@@ -425,7 +425,7 @@ function checkList(choice) {
             if (choice == true) {
                 security += (-5);
                 environment += (-5);
-                economy += -10;
+                economy += (-10);
             } else if (choice == false) {
 
             } else {
